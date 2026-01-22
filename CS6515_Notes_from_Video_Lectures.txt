@@ -1,0 +1,60 @@
+WEEK 1
+
+0 - Introduction to Graduate Algorithms
+This is a theory course:
+Dynamic Programming (i.e., no recursion)
+Randomized Algorithms
+Divide and Conquer
+Graph Algorithms (incl. the page rank algorithm)
+Max-Flow
+Linear Programming (optimization problems)
+VP-completeness
+
+He recommends using the Dasgupta book about algorithms.
+-----
+
+1 - DP1: FIB - LIS - LCS
+
+Dynamic Programming (key: do lots of practice):
+- define problem in words
+prexif
+add a constraint, if needed
+- recurrent relation
+- start with the smaller subproblems
+1) Fibonacci sequence
+Fn = Fn-1 + Fn-2
+Recursive implementation (exponential, not polynomial complexity).
+use an aaray, instead (O(n))
+or, use the "golden ratio" formula (O(1))
+2) Longest increasing subsequence (LIS)
+elements don't have to be consequent
+at i+1st element, we need to track the preceding longest incr. subs. with the minimum ending element
+idea: for every possible ending character, maintain its own LIS
+L(i)=length of LIS in a0...ai (incl. ai)
+O(n^2)
+3) Longest common subsequence (LCS)
+used by the unix diff command
+one-dimensional traversal won't work, 2D-table needs to be used by the DP (L[i,j])
+O(n^2)
+
+2 - DP2: Knapsack - Chain Multiply
+4) Knapsack
+Wi and Vi arrays
+one copy of each object or unlimited supply of each object
+Greedy algorithm?
+Sort objects by the value per unit of weight. But it fails.
+DP attempt 1: K(i) - max value achievable using an a-subset of objects 1..i
+It fails as well. We need to limit the capacity available to the sub-problems.
+DP attempt 2: a 2D-table K(i,b) - max value achievable using a subset of objects 1..i
+O(n*B)
+This problem is actually is NP-complete.
+Next - repetition: unlimited supply
+K(i,b) - max value attainable from a multiset of objects with weights<=b
+the recursion condition is almost the same as previously, bu first, simpler subproblem: K(b)
+... I've stopped watching the lectures at this point
+5) Chain matrix multiply
+6) Shortest path algorithm
+
+
+
+
